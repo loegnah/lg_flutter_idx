@@ -11,17 +11,16 @@ class Page4 extends StatefulWidget {
 }
 
 class _Page4State extends State<Page4> {
-  List<XFile> files = [];
+  List<XFile?> files = [null, null, null, null];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView.builder(
-        // padding: const EdgeInsets.all(10),
-        itemCount: files.length + 1,
+        itemCount: files.length,
         itemBuilder: (context, index) {
           return InkWell(
-            onTap: index == files.length
+            onTap: files[index] == null
                 ? () async {
                     final ImagePicker picker = ImagePicker();
                     final file =
@@ -49,10 +48,10 @@ class _Page4State extends State<Page4> {
               color: Colors.black38,
               margin:
                   const EdgeInsets.symmetric(vertical: 8.0, horizontal: 16.0),
-              child: index == files.length
+              child: files[index] == null
                   ? null
                   : Image.file(
-                      File(files[index].path),
+                      File(files[index]!.path),
                       fit: BoxFit.cover,
                     ),
               // : Image.network(
