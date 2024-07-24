@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
 import 'package:gap/gap.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:myapp/page/page2.dart';
 
 class Page1 extends StatelessWidget {
   const Page1({super.key});
@@ -37,7 +38,10 @@ class Page1 extends StatelessWidget {
           ),
           const Gap(10),
           ElevatedButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Page2()));
+            },
             child: const Text('시작하기'),
           ),
         ],
