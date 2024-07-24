@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:ionicons/ionicons.dart';
+import 'package:gap/gap.dart';
+import 'package:animate_do/animate_do.dart';
 
 class Page1 extends StatelessWidget {
   const Page1({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Text(
             style: TextStyle(
@@ -16,14 +19,23 @@ class Page1 extends StatelessWidget {
             ),
             '포토네컷',
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Ionicons.camera_outline),
-              Icon(Ionicons.camera_reverse),
-              Icon(Ionicons.add),
-              Icon(Ionicons.add),
-            ],
+          Gap(10),
+          FadeIn(
+            duration: Duration(seconds: 1),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Ionicons.camera_outline),
+                Icon(Ionicons.camera_reverse_outline),
+                Icon(Ionicons.image_outline),
+                Icon(Ionicons.videocam_outline),
+              ],
+            ),
+          ),
+          Gap(10),
+          ElevatedButton(
+            onPressed: () {},
+            child: Text('시작하기'),
           ),
         ],
       ),
